@@ -1,0 +1,13 @@
+services:
+  jushuitan-skill-service:
+    image: jushuitan-skill-service:1.0
+    container_name: jushuitan-skill-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "5011:5011"
+    restart: on-failure
+    network_mode: bridge
